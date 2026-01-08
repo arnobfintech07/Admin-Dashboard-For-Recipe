@@ -1,7 +1,7 @@
 function SideBar() {
   return (
     
-    <ul className=" my-5 menu bg-base-200  w-56 [&_li>*]:rounded-none p-0">
+    <ul className=" my-1 menu pb-180 bg-base-200  w-56 [&_li>*]:rounded-none p-0">
     <div className=" text-xl">
       <li>
         <a>Dashboard</a>

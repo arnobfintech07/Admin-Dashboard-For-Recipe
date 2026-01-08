@@ -9,8 +9,11 @@ function App() {
 
   return (
     <>
+    <div >
       <Navbar/>
-      <SideBar/>
+      <SideBar/>  
+
+    </div>
     </>
   )
 }
