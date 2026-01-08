@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
 function SideBar() {
   return (
     
-    <ul className=" my-1 menu pb-180 bg-base-200  w-56 [&_li>*]:rounded-none p-0">
-    <div className=" text-xl">
+    <div>
+
+    <div className=" text-45xl pb-40">
+      <ul className=" menu pb-140 w-50 bg-base-200 text-xl  ">
       <li>
         <a>Dashboard</a>
       </li>
@@ -13,13 +16,15 @@ function SideBar() {
         <a>Settings</a>
       </li>
       <li>
-        <a>Recipies</a>
+        <Link to = "/recipes">Recipies</Link>
       </li>
       <li>
         <a>Sign Out</a>
       </li>
-      </div>
     </ul>
+      </div>
+    
+    </div>
 
   );
 }
