@@ -7,7 +7,7 @@ function SideBar() {
     <div className=" text-45xl pb-40">
       <ul className=" menu pb-140 w-50 bg-base-200 text-xl  ">
       <li>
-        <a>Dashboard</a>
+        <Link to = "/dashboard">Dashboard</Link>
       </li>
       <li>
         <a>Categories</a>
