@@ -1,9 +1,65 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+
+
 
 const RecipeModal = () => {
+  const [formData,setFormData] = useState({
+    name : "",
+    recipe_image : null,
+    preparation_time: "",
+    cook_time:"",
+    description: "",
+    ingredients: "",
+    category:"",
+    difficulty:"",
+  });
+
+
+const [responseMessage, setResponseMessage] = useState("");
+
+
+  const handleInputChange = (e) => {
+    const {name, value} = e.target;
+    setFormData((prev) => ({...prev, [name]: value}));
+  }
+  const handleFileChange = (e) => {
+    setFormData((prev) => ({...prev, recipe_image: e.target.files[0]}));
+  }
+
+const AddData = async () => {
+       console.log('Posting data...');
+
+
+       // 4. Use formData to handle file uploads properly
+       const dataToSend = new FormData();
+       Object.keys(formData).forEach((key) => {
+           dataToSend.append(key, formData[key]);
+       });
+
+
+       try {
+           const response = await axios.post("http://192.168.0.249:8000/api/recipes/", dataToSend, {
+               headers: { "Content-Type": "multipart/form-data" },
+           });
+           setResponseMessage("Recipe saved successfully!");
+           console.log(response.data);
+       } catch (err) {
+           if (err.response) {
+               console.log("Validation Errors:", err.response.data);
+               setResponseMessage(`Error: ${JSON.stringify(err.response.data)}`);
+           } else {
+               setResponseMessage("Error creating post");
+           }
+       }
+   };
+
+      
+
   return (
     <>
       <div className="card bg-base-100 shadow-sm m-57 h-280 ">
+        
         <div className="min-h-0">
           <figure>
             <h1 className=" text-2xl rounded shadow w-full pl-5 p-3 min-h-0">
@@ -17,6 +73,9 @@ const RecipeModal = () => {
           <div>
             <div className="pl-5">
               <input
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
                 type="text"
                 placeholder="eg: Chicken Soup"
                 className="input w-100 "
@@ -30,13 +89,19 @@ const RecipeModal = () => {
               <h1 className="p-4">Recipe Images</h1>
             </div>
             <div className="pl-4 ">
-              <input type="file" className=" file-input w-90" />
+              <input 
+              type="file"
+              onChange={handleFileChange}
+               className=" file-input w-90" />
             </div>
             <div className="">
               <h1 className="p-4">Description</h1>
             </div>
             <div className="pl-4 ">
               <input
+                name="description"
+                value={formData.description}
+                onChange={handleInputChange}
                 type="text"
                 placeholder="Give Description"
                 className="pl-3 file-input w-90"
@@ -45,8 +110,11 @@ const RecipeModal = () => {
             <div className="">
               <h1 className="p-4">Ingredients</h1>
             </div>
-             <div className="pl-4 ">
+            <div className="pl-4 ">
               <input
+              name="ingredients"
+                value={formData.ingredients}
+                onChange={handleInputChange}
                 type="text"
                 placeholder="Give Ingredients"
                 className="pl-3 file-input w-90"
@@ -61,6 +129,9 @@ const RecipeModal = () => {
           </div>
           <div className="pl-5">
             <input
+              name="preparation_time"
+                value={formData.preparation_time}
+                onChange={handleInputChange}
               type="text"
               placeholder="eg: give time in min"
               className="input w-90 "
@@ -71,6 +142,9 @@ const RecipeModal = () => {
 
             <div className="mt-3 pl-5">
               <input
+              name="cook_time"
+                value={formData.cook_time}
+                onChange={handleInputChange}
                 type="text"
                 placeholder="eg: give time in min"
                 className="input w-90 "
@@ -83,7 +157,11 @@ const RecipeModal = () => {
           </div>
           <div className="pl-5">
             <fieldset className="fieldset mt-2">
-              <select defaultValue="Pick Difficulty" className="select">
+              <select 
+              name="difficulty"
+                value={formData.difficulty}
+                onChange={handleInputChange}
+              defaultValue="Pick Difficulty" className="select">
                 <option disabled={true}>Pick Difficulty</option>
                 <option>Easy</option>
                 <option>Medium</option>
@@ -97,7 +175,11 @@ const RecipeModal = () => {
 
           <div className="pl-5">
             <fieldset className="fieldset mt-2">
-              <select defaultValue="Pick a Category" className="select">
+              <select
+              name="category"
+                value={formData.category}
+                onChange={handleInputChange}
+              defaultValue="Pick a Category" className="select">
                 <option disabled={true}>Pick Category</option>
                 <option>Fish</option>
                 <option>Meat</option>
@@ -110,10 +192,15 @@ const RecipeModal = () => {
           </div>
         </div>
         <div className="pl-75">
-
-        <button className="btn w-30 bg-blue-900 text-white
-         ">Save</button>
+          <button
+            className="btn w-30 bg-blue-900 text-white
+         "onClick={AddData}
+          >
+            Save
+          </button>
+          
         </div>
+        {responseMessage && <div className="alert alert-info mx-5">{responseMessage}</div>}
       </div>
     </>
   );
