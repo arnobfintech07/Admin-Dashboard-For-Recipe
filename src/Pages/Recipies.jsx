@@ -13,6 +13,7 @@ const Recipies = () => {
           <SideBar />
           <div className="m-5 flex-1  h-4">
             <h1 className=" text-3xl rounded shadow">Recipes</h1>
+            <button className="btn m-6 ">New Recipe</button>
             <div className="flex ">
             <Card/>
             <Card/>
