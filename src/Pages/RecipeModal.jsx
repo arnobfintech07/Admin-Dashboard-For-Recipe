@@ -6,7 +6,7 @@ const RecipeModal = () => {
       <div className="card bg-base-100 shadow-sm m-57 h-280 ">
         <div className="min-h-0">
           <figure>
-            <h1 className="bg-amber-200 text-2xl rounded shadow w-full pl-5 p-3 min-h-0">
+            <h1 className=" text-2xl rounded shadow w-full pl-5 p-3 min-h-0">
               Edit Recipe
             </h1>
           </figure>
@@ -108,6 +108,11 @@ const RecipeModal = () => {
               </select>
             </fieldset>
           </div>
+        </div>
+        <div className="pl-75">
+
+        <button className="btn w-30 bg-blue-900 text-white
+         ">Save</button>
         </div>
       </div>
     </>

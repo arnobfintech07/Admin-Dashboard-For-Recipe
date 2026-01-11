@@ -5,7 +5,7 @@ import Card from "./Card";
 import RecipeModal from "./RecipeModal";
 import ModalWrapper from "../Components/ModalWrapper";
 const Recipies = () => {
-  const [showModal, setShowModal] = useState(false);
+
 
   return (
     <>
