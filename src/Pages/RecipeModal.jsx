@@ -3,7 +3,7 @@ import React from "react";
 const RecipeModal = () => {
   return (
     <>
-      <div className="card bg-base-100 w-110 shadow-sm m-57 h-280 ">
+      <div className="card bg-base-100 shadow-sm m-57 h-280 ">
         <div className="min-h-0">
           <figure>
             <h1 className="bg-amber-200 text-2xl rounded shadow w-full pl-5 p-3 min-h-0">

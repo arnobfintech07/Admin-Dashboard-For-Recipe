@@ -1,7 +1,12 @@
+import { useState } from "react";
 import Navbar from "../Components/Navbar";
 import SideBar from "../Components/SideBar";
 import Card from "./Card";
+import RecipeModal from "./RecipeModal";
+import ModalWrapper from "../Components/ModalWrapper";
 const Recipies = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
       <div>
@@ -13,11 +18,20 @@ const Recipies = () => {
           <SideBar />
           <div className="m-5 flex-1  h-4">
             <h1 className=" text-3xl rounded shadow">Recipes</h1>
-            <button className="btn m-6 ">New Recipe</button>
+            <button
+              className="btn mt-9"
+              onClick={() => document.getElementById("my_modal_4").showModal()}
+            >
+              New Recipe
+            </button>
+            {/* {showModal && <RecipeModal />} */}
+            <ModalWrapper>
+              <RecipeModal />
+            </ModalWrapper>
             <div className="flex ">
-            <Card/>
-            <Card/>
-            <Card/>
+              <Card />
+              <Card />
+              <Card />
             </div>
           </div>
         </div>
