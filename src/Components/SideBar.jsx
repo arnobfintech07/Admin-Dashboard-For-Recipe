@@ -10,13 +10,13 @@ function SideBar() {
         <Link to = "/dashboard">Dashboard</Link>
       </li>
       <li>
-        <a>Categories</a>
+        <Link to = "/recipes">Recipies</Link>
+      </li>
+      <li>
+        <Link to="/categories">Categories</Link>
       </li>
       <li>
         <a>Settings</a>
-      </li>
-      <li>
-        <Link to = "/recipes">Recipies</Link>
       </li>
       <li>
         <a>Sign Out</a>

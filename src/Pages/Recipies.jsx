@@ -1,11 +1,25 @@
-import { useState } from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import SideBar from "../Components/SideBar";
-import Card from "./Card";
+import Card from "../Components/Card";
 import RecipeModal from "./RecipeModal";
 import ModalWrapper from "../Components/ModalWrapper";
-const Recipies = () => {
 
+const Recipies = () => {
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    const getRecipes = async () => {
+      try {
+        const data = await axios.get(`http://192.168.0.249:8000/api/recipes`);
+        setRecipes(data.data.recipes);
+      } catch {
+        console.log(e);
+      }
+    };
+    getRecipes();
+  }, []);
 
   return (
     <>
@@ -17,24 +31,28 @@ const Recipies = () => {
         <div className="flex flex-row">
           <SideBar />
           <div className="m-5 flex-1  h-4">
-            <h1 className=" text-3xl rounded shadow">Recipes</h1>
-            <button
-              className="btn mt-9"
-              onClick={() => document.getElementById("my_modal_4").showModal()}
-            >
-              New Recipe
-            </button>
-            {/* {showModal && <RecipeModal />} */}
-            <ModalWrapper>
-              <RecipeModal />
-            </ModalWrapper>
-            <div className="flex ">
-              <Card />
-              <Card />
-              <Card />
-            </div>
-          </div>
+          <h1 className=" text-3xl rounded shadow">Recipes</h1>
+          <button
+            className="btn mt-9"
+            onClick={() => document.getElementById("my_modal_4").showModal()}
+          >
+            New Recipe
+          </button>
+          <div className="flex flex-col lg:flex-row lg:flex-wrap gap-10 my-5  pr-20">
+          {recipes.map((cardData, index) => (
+            <Card key={index} cardData={cardData} />
+          ))}
         </div>
+          {/* {showModal && <RecipeModal />} */}
+          <ModalWrapper>
+            <RecipeModal />
+          </ModalWrapper>
+        </div>
+        
+        </div>
+        
+
+        
       </div>
     </>
   );

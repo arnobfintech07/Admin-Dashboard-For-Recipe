@@ -195,12 +195,9 @@ const AddData = async () => {
                 onChange={handleInputChange}
               defaultValue="Pick a Category" className="select">
                 <option disabled={true}>Pick Category</option>
-                <option>Fish</option>
-                <option>Meat</option>
-                <option>Vegetable</option>
-                <option>Seafood</option>
-                <option>Dessert</option>
-                <option>Soups</option>
+                <option>Veg</option>
+                <option>Non-Veg</option>
+                
               </select>
             </fieldset>
           </div>
