@@ -13,7 +13,7 @@ function Dashboard() {
           <h1 className=" text-3xl rounded shadow">DashBoard</h1>
           <div className="flex mt-10">
             <div className="card bg-base-100 h-150 w-110 shadow-sm m-5">
-              <div className="bg-amber-200 pl-4 h-10 ">
+              <div className="bg-base-300 pl-4 h-10 ">
                 <h1 className=" text-2xl  ">Popular</h1>
               </div>
               <div>
@@ -22,7 +22,7 @@ function Dashboard() {
             </div>
 
             <div className="card bg-base-100 h-150 w-110 shadow-sm m-5">
-              <div className="bg-amber-200 pl-4 h-10 ">
+              <div className="bg-base-300 pl-4 h-10 ">
                 <h1 className=" text-2xl  ">Top Shared</h1>
               </div>
               <div>
@@ -30,9 +30,9 @@ function Dashboard() {
               </div>
             </div>
 
-            <div className="card bg-base-100 h-150 w-110 shadow-sm m-5">
-              <div className="bg-amber-200 pl-4 h-10 ">
-                <h1 className=" text-2xl  ">Top Favorited</h1>
+            <div className="card bg-base-300 h-150 w-110 shadow-sm m-5">
+              <div className=" pl-4 h-10 ">
+                <h1 className="text-2xl  ">Top Favorited</h1>
               </div>
               <div>
                 <FavoritedModal />

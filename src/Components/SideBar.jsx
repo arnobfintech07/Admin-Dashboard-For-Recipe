@@ -25,7 +25,7 @@ function SideBar() {
       
       
       <li>
-        <a>Settings</a>
+        <Link to="/settings">Settings</Link>
       </li>
       <li>
         <a>Sign Out</a>

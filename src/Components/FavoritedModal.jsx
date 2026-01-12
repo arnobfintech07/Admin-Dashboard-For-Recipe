@@ -2,17 +2,17 @@ import React from 'react'
 
 const FavoritedModal = () => {
   return (
-    <div className="pl-7 overflow-x-auto h-96 w-96 mt-7 flex-col">
+    <div className="pl-7 overflow-x-auto h-96 w-96 mt-7 flex-col bg-base-100">
   <table className="table table-xs table-pin-rows">
     <thead>
       <tr>
         <th></th>
-        <td className='text-xl'>Recipe</td>
-        <td className='pl-30 text-xl align-baseline'>Favorites</td>
+        <td className='text-xl bg-base-100'>Recipe</td>
+        <td className='pl-30 text-xl align-baseline bg-base-100'>Favorites</td>
       </tr>
     </thead>
     
-    <tbody>
+    <tbody className='bg-base-100'>
       <tr>
         <th>1</th>
         <td>Cy Ganderton</td>

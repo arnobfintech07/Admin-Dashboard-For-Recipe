@@ -1,66 +1,61 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-
-
 const RecipeModal = () => {
-  const [formData,setFormData] = useState({
-    name : "",
-    recipe_image : null,
+  const [formData, setFormData] = useState({
+    name: "",
+    recipe_image: null,
     preparation_time: "",
-    cook_time:"",
+    cook_time: "",
     description: "",
     ingredients: "",
-    category:"",
-    difficulty:"",
+    category: "",
+    difficulty: "",
     how_to_cook: "",
   });
 
-
-const [responseMessage, setResponseMessage] = useState("");
-
+  const [responseMessage, setResponseMessage] = useState("");
 
   const handleInputChange = (e) => {
-    const {name, value} = e.target;
-    setFormData((prev) => ({...prev, [name]: value}));
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
   const handleFileChange = (e) => {
-    setFormData((prev) => ({...prev, recipe_image: e.target.files[0]}));
-  }
+    setFormData((prev) => ({ ...prev, recipe_image: e.target.files[0] }));
+  };
 
-const AddData = async () => {
-       console.log('Posting data...');
+  const AddData = async () => {
+    console.log("Posting data...");
 
+    // 4. Use formData to handle file uploads properly
+    const dataToSend = new FormData();
+    Object.keys(formData).forEach((key) => {
+      dataToSend.append(key, formData[key]);
+    });
 
-       // 4. Use formData to handle file uploads properly
-       const dataToSend = new FormData();
-       Object.keys(formData).forEach((key) => {
-           dataToSend.append(key, formData[key]);
-       });
-
-
-       try {
-           const response = await axios.post("http://192.168.0.249:8000/api/recipes/", dataToSend, {
-               headers: { "Content-Type": "multipart/form-data" },
-           });
-           setResponseMessage("Recipe saved successfully!");
-           console.log(response.data);
-       } catch (err) {
-           if (err.response) {
-               console.log("Validation Errors:", err.response.data);
-               setResponseMessage(`Error: ${JSON.stringify(err.response.data)}`);
-           } else {
-               setResponseMessage("Error creating post");
-           }
-       }
-   };
-
-      
+    try {
+      const response = await axios.post(
+        "http://192.168.0.249:8000/api/recipes/",
+        dataToSend,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+      setResponseMessage("Recipe saved successfully!");
+      console.log(response.data);
+    } catch (err) {
+      if (err.response) {
+        console.log("Validation Errors:", err.response.data);
+        setResponseMessage(`Error: ${JSON.stringify(err.response.data)}`);
+      } else {
+        setResponseMessage("Error creating post");
+      }
+    }
+  };
 
   return (
     <>
-      <div className="card bg-base-100 shadow-sm m-57 h-350 ">
-        
+      <div className="card bg-amber-200 rounded shadow m-57 h-350 ">
         <div className="min-h-0">
           <figure>
             <h1 className=" text-2xl rounded shadow w-full pl-5 p-3 min-h-0">
@@ -90,10 +85,11 @@ const AddData = async () => {
               <h1 className="p-4">Recipe Images</h1>
             </div>
             <div className="pl-4 ">
-              <input 
-              type="file"
-              onChange={handleFileChange}
-               className=" file-input w-90" />
+              <input
+                type="file"
+                onChange={handleFileChange}
+                className=" file-input w-90"
+              />
             </div>
             <div className="">
               <h1 className="p-4">Description</h1>
@@ -113,7 +109,7 @@ const AddData = async () => {
             </div>
             <div className="pl-4 mt">
               <input
-              name="ingredients"
+                name="ingredients"
                 value={formData.ingredients}
                 onChange={handleInputChange}
                 type="text"
@@ -126,7 +122,7 @@ const AddData = async () => {
             </div>
             <div className="pl-4 mt">
               <input
-              name="how_to_cook"
+                name="how_to_cook"
                 value={formData.how_to_cook}
                 onChange={handleInputChange}
                 type="text"
@@ -144,8 +140,8 @@ const AddData = async () => {
           <div className="pl-5">
             <input
               name="preparation_time"
-                value={formData.preparation_time}
-                onChange={handleInputChange}
+              value={formData.preparation_time}
+              onChange={handleInputChange}
               type="text"
               placeholder="eg: give time in min"
               className="input w-90 "
@@ -156,7 +152,7 @@ const AddData = async () => {
 
             <div className="mt-3 pl-5">
               <input
-              name="cook_time"
+                name="cook_time"
                 value={formData.cook_time}
                 onChange={handleInputChange}
                 type="text"
@@ -171,11 +167,13 @@ const AddData = async () => {
           </div>
           <div className="pl-5">
             <fieldset className="fieldset mt-2">
-              <select 
-              name="difficulty"
+              <select
+                name="difficulty"
                 value={formData.difficulty}
                 onChange={handleInputChange}
-              defaultValue="Pick Difficulty" className="select">
+                defaultValue="Pick Difficulty"
+                className="select"
+              >
                 <option disabled={true}>Pick Difficulty</option>
                 <option>Easy</option>
                 <option>Medium</option>
@@ -190,14 +188,15 @@ const AddData = async () => {
           <div className="pl-5">
             <fieldset className="fieldset mt-2">
               <select
-              name="category"
+                name="category"
                 value={formData.category}
                 onChange={handleInputChange}
-              defaultValue="Pick a Category" className="select">
+                defaultValue="Pick a Category"
+                className="select"
+              >
                 <option disabled={true}>Pick Category</option>
                 <option>Veg</option>
                 <option>Non-Veg</option>
-                
               </select>
             </fieldset>
           </div>
@@ -205,13 +204,15 @@ const AddData = async () => {
         <div className="pl-75">
           <button
             className="btn w-30 bg-blue-900 text-white mt-5
-         "onClick={AddData}
+         "
+            onClick={AddData}
           >
             Save
           </button>
-          
         </div>
-        {responseMessage && <div className="alert alert-info mx-5">{responseMessage}</div>}
+        {responseMessage && (
+          <div className="alert alert-info mx-5">{responseMessage}</div>
+        )}
       </div>
     </>
   );
