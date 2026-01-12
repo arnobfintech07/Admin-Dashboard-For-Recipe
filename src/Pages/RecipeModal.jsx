@@ -13,6 +13,7 @@ const RecipeModal = () => {
     ingredients: "",
     category:"",
     difficulty:"",
+    how_to_cook: "",
   });
 
 
@@ -58,7 +59,7 @@ const AddData = async () => {
 
   return (
     <>
-      <div className="card bg-base-100 shadow-sm m-57 h-280 ">
+      <div className="card bg-base-100 shadow-sm m-57 h-350 ">
         
         <div className="min-h-0">
           <figure>
@@ -83,7 +84,7 @@ const AddData = async () => {
             </div>
           </div>
 
-          <div className="card bg-base-100 h-90 w-100 shadow-sm m-5   ">
+          <div className="card bg-base-100 h-120 w-100 shadow-sm m-5   ">
             <h2 className="bg-base-200 pl-5 p-3 rounded">Media</h2>
             <div>
               <h1 className="p-4">Recipe Images</h1>
@@ -110,7 +111,7 @@ const AddData = async () => {
             <div className="">
               <h1 className="p-4">Ingredients</h1>
             </div>
-            <div className="pl-4 ">
+            <div className="pl-4 mt">
               <input
               name="ingredients"
                 value={formData.ingredients}
@@ -120,10 +121,23 @@ const AddData = async () => {
                 className="pl-3 file-input w-90"
               />
             </div>
+            <div className="">
+              <h1 className="p-4">How To Cook</h1>
+            </div>
+            <div className="pl-4 mt">
+              <input
+              name="how_to_cook"
+                value={formData.how_to_cook}
+                onChange={handleInputChange}
+                type="text"
+                placeholder="Give Steps to cook"
+                className="pl-3 file-input w-90"
+              />
+            </div>
           </div>
         </div>
-        <div className="card bg-base-100 w-100 shadow-sm h-110 m-5   ">
-          <h2 className="bg-base-200 pl-5 p-3 rounded">Recipe Directions</h2>
+        <div className="card bg-base-100 w-105 shadow-sm h-110 pl-5  ">
+          <h2 className="bg-base-200 pl-5 p-3 rounded ">Recipe Directions</h2>
           <div>
             <h1 className="p-4">Prep. Time(min)</h1>
           </div>
@@ -193,7 +207,7 @@ const AddData = async () => {
         </div>
         <div className="pl-75">
           <button
-            className="btn w-30 bg-blue-900 text-white
+            className="btn w-30 bg-blue-900 text-white mt-5
          "onClick={AddData}
           >
             Save
