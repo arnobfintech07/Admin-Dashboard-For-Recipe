@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CardModal = () => {
+const SharedModal = () => {
   return (
     <div className="pl-7 overflow-x-auto h-96 w-96 mt-7 flex-col">
   <table className="table table-xs table-pin-rows">
@@ -8,7 +8,7 @@ const CardModal = () => {
       <tr>
         <th></th>
         <td className='text-xl'>Recipe</td>
-        <td className='pl-30 text-xl'>Views</td>
+        <td className='pl-30 text-xl'>Shares</td>
       </tr>
     </thead>
     
@@ -44,4 +44,4 @@ const CardModal = () => {
   )
 }
 
-export default CardModal
+export default SharedModal
