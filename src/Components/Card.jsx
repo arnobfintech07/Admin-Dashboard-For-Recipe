@@ -15,7 +15,7 @@ const Card = ({ cardData }) => {
           <h2 className="card-title">Fresh Muscles</h2>
         </div>
       </div> */}
-    <button onClick={() => document.getElementById("my_modal_4").showModal()}>
+    <button onClick={() => document.getElementById("my_modal_3").showModal()}>
         <div className="card bg-base-100 w-96 h-80 shadow-sm">
         <figure className="h-80">
           <img
