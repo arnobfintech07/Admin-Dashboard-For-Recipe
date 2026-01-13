@@ -55,7 +55,7 @@ const RecipeModal = () => {
   return (
     <>
       <button onClick={() => document.getElementById("my_modal_4").showModal()}>
-        <div className="card bg-amber-200 rounded shadow m-57 h-350 ">
+        <div className="card rounded shadow m-57 h-350 ">
           <div className="min-h-0">
             <figure>
               <h1 className=" text-2xl rounded shadow w-full pl-5 p-3 min-h-0">
