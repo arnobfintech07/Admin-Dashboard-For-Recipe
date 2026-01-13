@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import SideBar from "../Components/SideBar";
 import Card from "../Components/Card";
-import RecipeModal from "./RecipeModal";
-import ModalWrapper from "../Components/ModalWrapper";
+import { baseURL } from "../utils/ configs";
 
 const VegFood = () => {
   const [recipes, setRecipes] = useState([]);
@@ -12,7 +11,7 @@ const VegFood = () => {
   useEffect(() => {
     const getRecipes = async () => {
       try {
-        const data = await axios.get(`http://192.168.0.249:8000/api/recipes?category=Veg`);
+        const data = await axios.get(`${baseURL}api/recipes?category=Veg`);
         setRecipes(data.data.recipes);
       } catch {
         console.log(e);
@@ -41,14 +40,10 @@ const VegFood = () => {
           {recipes.map((cardData, index) => (
             <Card key={index} cardData={cardData} />
           ))}
-        </div>
-          
-        </div>
-        
+        </div> 
         </div>
         
-
-        
+        </div> 
       </div>
     </>
     </>

@@ -1,9 +1,18 @@
-import React from "react";
-
+import CardModal from "../Components/CardModal";
+import FavoritedModal from "../Components/FavoritedModal";
+import Navbar from "../Components/Navbar";
+import SharedModal from "../Components/SharedModal";
+import SideBar from "../Components/SideBar";
 const Categories = () => {
   return (
     <div >
-      <div className="overflow-x-auto">
+     <Navbar/>
+      <div className="flex flex-row">
+      <SideBar/>
+      <div className="font-bold mt-13 pl-5 text-2xl">
+        <h2>Categories</h2>
+      </div>
+      <div className="overflow-x-auto mt-55 pl-22">
         <table className="table">
           {/* head */}
           <thead>
@@ -174,6 +183,8 @@ const Categories = () => {
         </table>
       </div>
     </div>
+      </div>
+     
   );
 };
 

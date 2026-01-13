@@ -5,6 +5,8 @@ import Dashboard from './Pages/Dashboard';
 import VegFood from './Pages/VegFood';
 import NonVegFood from './Pages/NonVegFood';
 import Settings from './Pages/Settings';
+import Categories from './Pages/Categories';
+
 function App() {
  
   return (
@@ -16,6 +18,7 @@ function App() {
          <Route path="/veg" element= {<VegFood/>} />
           <Route path="/nonveg" element= {<NonVegFood/>} />
           <Route path="/settings" element= {<Settings/>} />
+          <Route path="/categories" element= {<Categories/>} />
       </Routes>
     </Router>
   )

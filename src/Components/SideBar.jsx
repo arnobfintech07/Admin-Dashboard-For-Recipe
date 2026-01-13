@@ -10,17 +10,11 @@ function SideBar() {
         <Link to = "/dashboard">Dashboard</Link>
       </li>
       <li>
-        <Link to = "/recipes">Recipies</Link>
+        <Link to = "/recipes">Recipes</Link>
       </li>
     
         <li>
-        <details>
-          <summary>By Category</summary>
-          <ul className="bg-base-100 rounded-t-none p-2">
-            <li><Link to= "/veg">Veg</Link></li>
-            <li><Link to="/nonveg">Non-Veg</Link></li>
-          </ul>
-        </details>
+        <Link to="/categories">Categories</Link>
       </li>
       
       
