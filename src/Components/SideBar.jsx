@@ -5,7 +5,7 @@ function SideBar() {
     <div>
 
     <div className=" text-45xl pb-40">
-      <ul className=" menu pb-140 w-50 bg-base-200 text-xl  ">
+      <ul className=" menu pb-140 w-50 h-230 bg-base-200 text-xl  ">
       <li>
         <Link to = "/dashboard">Dashboard</Link>
       </li>
@@ -22,6 +22,9 @@ function SideBar() {
         <Link to="/settings">Settings</Link>
       </li>
       <li>
+        <a>About</a>
+      </li>
+       <li>
         <a>Sign Out</a>
       </li>
     </ul>

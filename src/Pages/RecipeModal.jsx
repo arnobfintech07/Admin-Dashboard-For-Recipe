@@ -54,14 +54,15 @@ const RecipeModal = () => {
 
   return (
     <>
-      <button onClick={() => document.getElementById("my_modal_4").showModal()}>
-        <div className="card rounded shadow m-57 h-350 ">
+      <button onClick={() => document.getElementById("my_modal_4").showModal()}>      </button>
+
+        <div className=" shadow m-4 h-350  ">
           <div className="min-h-0">
-            <figure>
+            <div>
               <h1 className=" text-2xl rounded shadow w-full pl-5 p-3 min-h-0">
                 Add Recipe
               </h1>
-            </figure>
+            </div>
             <div>
               <p className="pl-5 mt-6 font-bold pb-3 mb-3">Recipe Name</p>
             </div>
@@ -185,14 +186,14 @@ const RecipeModal = () => {
               <h2>Categories</h2>
             </div>
 
-            <div classNamemodal-box="pl-5">
+            <div className="pl-4">
               <fieldset className="fieldset mt-2">
                 <select
                   name="category"
                   value={formData.category}
                   onChange={handleInputChange}
                   defaultValue="Pick a Category"
-                  className="select"
+                  className="select  "
                 >
                   <option disabled={true}>Pick Category</option>
                   <option>Veg</option>
@@ -214,7 +215,6 @@ const RecipeModal = () => {
             <div className="alert alert-info mx-5">{responseMessage}</div>
           )}
         </div>
-      </button>
     </>
   );
 };

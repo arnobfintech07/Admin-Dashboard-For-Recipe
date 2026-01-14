@@ -1,190 +1,120 @@
 import CardModal from "../Components/CardModal";
 import FavoritedModal from "../Components/FavoritedModal";
 import Navbar from "../Components/Navbar";
-import SharedModal from "../Components/SharedModal";
 import SideBar from "../Components/SideBar";
 const Categories = () => {
   return (
-    <div >
-     <Navbar/>
+    <div>
+      <Navbar />
       <div className="flex flex-row">
-      <SideBar/>
-      <div className="font-bold mt-13 pl-5 text-2xl">
-        <h2>Categories</h2>
-      </div>
-      <div className="overflow-x-auto mt-55 pl-22">
-        <table className="table">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* row 1 */}
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <td>
-                <div className="flex items-center gap-3">
-                  <div className="avatar">
-                    <div className="mask mask-squircle h-12 w-12">
-                      <img
-                        src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                        alt="Avatar Tailwind CSS Component"
-                      />
+        <SideBar />
+        <div className="font-bold mt-13 pl-5 text-2xl">
+          <h2>Categories</h2>
+        </div>
+        <div className="mt-30 ">
+          <div className="bg-base-300 pl-4  h-10 rounded ">
+            <h1 className=" text-2xl">Veg Food</h1>
+          </div>
+          <table className="table">
+            {/* head */}
+            <div>
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Recipe Name</th>
+                  <div className="pl-6">
+                 
+                  </div>
+                </tr>
+              </thead>
+            </div>
+            <tbody>
+              {/* row 1 */}
+              <tr>
+                <td>
+                  <div className="flex ">
+                    <div className="avatar">
+                      <div className="mask mask-squircle h-12 w-12">
+                        <img
+                          src="https://recipeapp.neurondigital.com/uploads/1537472654recipe_0000_vitchakorn-koonyosying-494170-unsplash.jpg"
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <div className="font-bold">Hart Hagerty</div>
-                    <div className="text-sm opacity-50">United States</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                Zemlak, Daniel and Leannon
-                <br />
-                <span className="badge badge-ghost badge-sm">
-                  Desktop Support Technician
-                </span>
-              </td>
-              <td>Purple</td>
-              <th>
-                <button className="btn btn-ghost btn-xs">details</button>
-              </th>
-            </tr>
-            {/* row 2 */}
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <td>
-                <div className="flex items-center gap-3">
-                  <div className="avatar">
-                    <div className="mask mask-squircle h-12 w-12">
-                      <img
-                        src="https://img.daisyui.com/images/profile/demo/3@94.webp"
-                        alt="Avatar Tailwind CSS Component"
-                      />
+                    <div className="pl-6">
+                      <div className="font-bold w-35">
+                        Basic Homemade Wholemeal Bread
+                      </div>
                     </div>
+                   
+                   
                   </div>
-                  <div>
-                    <div className="font-bold">Brice Swyre</div>
-                    <div className="text-sm opacity-50">China</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                Carroll Group
-                <br />
-                <span className="badge badge-ghost badge-sm">
-                  Tax Accountant
-                </span>
-              </td>
-              <td>Red</td>
-              <th>
-                <button className="btn btn-ghost btn-xs">details</button>
-              </th>
-            </tr>
-            {/* row 3 */}
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <td>
-                <div className="flex items-center gap-3">
-                  <div className="avatar">
-                    <div className="mask mask-squircle h-12 w-12">
-                      <img
-                        src="https://img.daisyui.com/images/profile/demo/4@94.webp"
-                        alt="Avatar Tailwind CSS Component"
-                      />
+                </td>
+              </tr>
+              {/* row 2 */}
+              <tr>
+                <td>
+                  <div className="flex ">
+                    <div className="avatar">
+                      <div className="mask mask-squircle h-12 w-12">
+                        <img
+                          src="https://recipeapp.neurondigital.com/uploads/1537471968recipe_0010_joseph-gonzalez-176749-unsplash.jpg"
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <div className="font-bold">Marjy Ferencz</div>
-                    <div className="text-sm opacity-50">Russia</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                Rowe-Schoen
-                <br />
-                <span className="badge badge-ghost badge-sm">
-                  Office Assistant I
-                </span>
-              </td>
-              <td>Crimson</td>
-              <th>
-                <button className="btn btn-ghost btn-xs">details</button>
-              </th>
-            </tr>
-            {/* row 4 */}
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-              <td>
-                <div className="flex items-center gap-3">
-                  <div className="avatar">
-                    <div className="mask mask-squircle h-12 w-12">
-                      <img
-                        src="https://img.daisyui.com/images/profile/demo/5@94.webp"
-                        alt="Avatar Tailwind CSS Component"
-                      />
+                    <div className="pl-6">
+                      <div className="font-bold w-35">Fresh Muscles</div>
                     </div>
+                    
                   </div>
-                  <div>
-                    <div className="font-bold">Yancy Tear</div>
-                    <div className="text-sm opacity-50">Brazil</div>
+                </td>
+              </tr>
+              {/* row 3 */}
+              <tr>
+                <td>
+                  <div className="flex ">
+                    <div className="avatar">
+                      <div className="mask mask-squircle h-12 w-12">
+                        <img
+                          src="https://recipeapp.neurondigital.com/uploads/1537472654recipe_0000_vitchakorn-koonyosying-494170-unsplash.jpg"
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
+                    </div>
+                    <div className="pl-6">
+                      <div className="font-bold w-35">Avocado Egg</div>
+                    </div>
+                    
                   </div>
-                </div>
-              </td>
-              <td>
-                Wyman-Ledner
-                <br />
-                <span className="badge badge-ghost badge-sm">
-                  Community Outreach Specialist
-                </span>
-              </td>
-              <td>Indigo</td>
-              <th>
-                <button className="btn btn-ghost btn-xs">details</button>
-              </th>
-            </tr>
-          </tbody>
-          {/* foot */}
-          <tfoot>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th></th>
-            </tr>
-          </tfoot>
-        </table>
+                </td>
+              </tr>
+              {/* row 4 */}
+              <tr>
+                <td>
+                  <div className="flex ">
+                    <div className="avatar">
+                      <div className="mask mask-squircle h-12 w-12">
+                        <img
+                          src="https://recipeapp.neurondigital.com/uploads/1537473001recipe_0003_rustic-vegan-756637-unsplash.jpg"
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
+                    </div>
+                    <div className="pl-6">
+                      <div className="font-bold w-35">
+                        Banana Blueberry Cake
+                      </div>
+                    </div>
+                    
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-      </div>
-     
   );
 };
 
