@@ -27,7 +27,7 @@ const About = () => {
     try {
       const response = await axios.post(`${baseURL}api/about_me`, dataToSend, {
       });
-      setResponseMessage("Recipe saved successfully!");
+      setResponseMessage("Details Updated successfully!");
       console.log(response.data);
     } catch (err) {
       if (err.response) {
@@ -64,12 +64,13 @@ const About = () => {
            className="input h-33 w-120" />
             </div>
             <div className="mt-4">
-              <button className="btn" onClick={AddData}>Save</button>
+              <button className="btn" onClick={AddData}>Submit</button>
             </div>
             {responseMessage && (
           <div className="alert alert-info mx-5">{responseMessage}</div>
         )}
           </div>
+
         </div>
       </div>
     </>
