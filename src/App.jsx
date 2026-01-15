@@ -7,6 +7,7 @@ import NonVegFood from './Pages/NonVegFood';
 import Settings from './Pages/Settings';
 import Categories from './Pages/Categories';
 import About from './Pages/About';
+import Pie from './Components/Pie';
 
 function App() {
  
@@ -21,6 +22,7 @@ function App() {
           <Route path="/settings" element= {<Settings/>} />
           <Route path="/categories" element= {<Categories/>} />
           <Route path="/about" element= {<About/>} />
+            <Route path="/pie" element= {<Pie/>} />
       </Routes>
     </Router>
   )

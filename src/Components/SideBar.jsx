@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 function SideBar() {
   return (
     
-    <div>
+   
 
     <div className=" text-45xl pb-40">
-      <ul className=" menu pb-140 w-50 h-230 bg-base-200 text-xl  ">
+      <ul className=" menu pb-140 w-50 h-250 bg-base-200 text-xl  ">
       <li>
         <Link to = "/dashboard">Dashboard</Link>
       </li>
@@ -22,15 +22,14 @@ function SideBar() {
         <Link to="/settings">Settings</Link>
       </li>
       <li>
-        <a>About</a>
+        <Link to="/about">About</Link>
       </li>
        <li>
         <a>Sign Out</a>
       </li>
     </ul>
       </div>
-    
-    </div>
+  
 
   );
 }
