@@ -54,7 +54,7 @@ const Test = ({data}) => {
               <td className="flex gap-3">
    
                 
-                  <button className="btn btn-warning">Edit</button>
+                  <button className="btn btn-warning" onClick={() => document.getElementById("my_modal_4").showModal()}>Edit</button>
             
                 
                   <button className="btn btn-error">Delete</button>

@@ -54,7 +54,10 @@ const RecipeModal = () => {
 
   return (
     <>
-      
+      <button onClick={() => document.getElementById("my_modal_3").showModal()}>
+        {" "}
+      </button>
+
       <div className=" shadow m-4 h-350  ">
         <div className="min-h-0">
           <div>
@@ -185,20 +188,17 @@ const RecipeModal = () => {
             <h2>Categories</h2>
           </div>
 
-          <div className="pl-4">
-            <fieldset className="fieldset mt-2">
-              <select
+        
+           <div className="pl-4 mt-5">
+
+            <input
                 name="category"
                 value={formData.category}
                 onChange={handleInputChange}
-                defaultValue="Pick a Category"
-                className="select  "
-              >
-                <option disabled={true}>Pick Category</option>
-                <option value={"veg"}>Veg</option>
-                <option value={"non-veg"}>Non-Veg</option>
-              </select>
-            </fieldset>
+                type="text"
+                placeholder="Select Category"
+                className="input w-90 "
+              />
           </div>
         </div>
         <div className="pl-75">
