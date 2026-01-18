@@ -54,10 +54,7 @@ const RecipeModal = () => {
 
   return (
     <>
-      <button onClick={() => document.getElementById("my_modal_4").showModal()}>
-        {" "}
-      </button>
-
+      
       <div className=" shadow m-4 h-350  ">
         <div className="min-h-0">
           <div>

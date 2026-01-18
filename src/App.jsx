@@ -8,13 +8,14 @@ import Settings from './Pages/Settings';
 import Categories from './Pages/Categories';
 import About from './Pages/About';
 import Pie from './Components/Pie';
+import Test from './Components/Test';
 
 function App() {
  
   return (
     <Router>
       <Routes>
-        <Route path="/" element= {<Home/>} />
+        <Route path="/" element= {<Dashboard/>} />
         <Route path="/recipes" element= {<Recipies/>} />
          <Route path="/dashboard" element= {<Dashboard/>} />
          <Route path="/veg" element= {<VegFood/>} />
@@ -23,6 +24,7 @@ function App() {
           <Route path="/categories" element= {<Categories/>} />
           <Route path="/about" element= {<About/>} />
             <Route path="/pie" element= {<Pie/>} />
+              <Route path="/test" element= {<Test/>} />
       </Routes>
     </Router>
   )

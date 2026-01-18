@@ -15,24 +15,14 @@ const Card = ({ cardData }) => {
           <h2 className="card-title">Fresh Muscles</h2>
         </div>
       </div> */}
-    <button onClick={() => document.getElementById("my_modal_3").showModal()}>
-        <div className="card bg-base-100 w-96 h-80 shadow-sm">
-        <figure className="h-80">
-          <img
-            src={
-              cardData.recipe_image.includes("://")
-                ? cardData.recipe_image
-                : baseURL + "storage/" + cardData.recipe_image
-            }
-            alt={cardData.name}
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title text-2xl font-bold">{cardData.name}</h2>
-        </div>
-      </div>
-    </button>
+    <div>
+    </div>
+
+    <div>
+      
+    </div>
     </>
+
   );
 };
 export default Card;

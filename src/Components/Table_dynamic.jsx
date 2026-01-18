@@ -1,14 +1,30 @@
 import React from "react";
 
-const Table = ({entry}) => {
+const Table = () => {
   const title = ["id", "image", "category"];
-
+  const entry = [
+    {
+      id: "1",
+      image: "/images/food01.jpg",
+      category: "fruit",
+      action: "button",
+      count: 521,
+    },
+    {
+      id: "2",
+      image:
+        "https://media.istockphoto.com/id/848013144/photo/minimal-strawberry.webp?b=1&s=612x612&w=0&k=20&c=f8SLSrGK-XxbmxKAjfux3IIGYLXwPJ00MciKfLOTBfw=",
+      category: "fruit",
+      action: "button",
+      count: 46546,
+    },
+  ];
 
   return (<>
     
     {/* // daisy ui normal table */}
 
-    <div className="w-full overflow-x-auto">
+    <div className="overflow-x-auto">
       <table className="table">
         <thead>
           <th>ID</th>
