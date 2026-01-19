@@ -4,7 +4,7 @@ const Table = () => {
   const title = ["id", "image", "category"];
   const entry = [
     {
-      id: "1",
+      id: "3",
       image: "/images/food01.jpg",
       category: "fruit",
       action: "button",

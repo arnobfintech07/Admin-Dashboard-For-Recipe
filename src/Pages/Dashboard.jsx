@@ -8,7 +8,7 @@ import axios from "axios";
 import Pie from "../Components/Pie";
 import Table from "../Components/Table";
 function Dashboard() {
-  const [cardNumber, setCardNumber] = useState([3, 2, 1]);
+  // const [cardNumber, setCardNumber] = useState([3, 2, 1]);
   const [cardValue, setCardValue] = useState(100);
   const [data, setData] = useState();
 
@@ -47,6 +47,7 @@ function Dashboard() {
       count: 46546,
     },
   ];
+  
 
   const url = "https://hello.com";
 
@@ -62,39 +63,45 @@ function Dashboard() {
 
   return (
     <>
-      <div className="w-full">
+      <div className="">
         <Navbar />
-        <div className="w-full flex flex-col lg:flex-row">
+        <div className=" flex flex-row gap-4 lg:flex-row">
           {/* side bar */}
           <SideBar />
-
-          {/* content / dashboard viewport */}
-          <div className="w-full px-5 flex flex-col gap-5">
+          <div className=" flex flex-col  w-full  lg:pl-22  lg:w-420  gap-5">
             {/* card section */}
-            <div className="w-full flex flex-col lg:flex-row gap-7 ">
-              {cardNumber.map((count, index) => (
+            <div className="w-full   flex flex-row m-4 lg:mt-10 lg:flex-row   lg:;justify-between gap-8 ">
+              {/* {cardNumber.map((count, index) => (
                 <Card2 key={index} cardValue={cardValue} />
-              ))}
+                
+                
+              ))} */}
+              <Card2/>
+              
             </div>
 
             {/* table */}
-            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-5 ">
+            <div className="w-full flex flex-row lg:flex-row  gap-4 lg:gap-10 ">
               {/* table 1 */}
-              <div className="col-span-1">
-                <h1>Table 1</h1>
+              <div className="col-span-1 w-50 lg:w-120">
+                <h1>  All Recipies</h1>
                 <Table entry={entryData} />
               </div>
-              <div className="col-span-1">
-                <h1>Table 2</h1>
+              <div className="col-span-1 w-60 lg:w-120">
+                <h1>All Categories</h1>
                 <Table entry={entryData2} />
               </div>
-              <div>
-                <h1>Table 3</h1>
+              <div className="col-span-1 w-60 lg:w-120">
+                <h1>All Reviews</h1>
                 <Table entry={entryData} />
               </div>
             </div>
           </div>
-        </div>
+          </div>
+
+          {/* content / dashboard viewport */}
+         
+       
       </div>
     </>
   );
