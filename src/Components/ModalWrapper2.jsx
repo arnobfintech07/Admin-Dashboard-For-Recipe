@@ -3,7 +3,7 @@ const ModalWrapper2 = ({ children }) => {
     <>
       {/* You can open the modal using document.getElementById('ID').showModal() method */}
       <dialog id="my_modal_3" className="modal">
-        <div className="modal-box dark:bg-base-300 bg-white w-full h-350 ">
+        <div className="modal-box h-220 ">
           <div className="">{children}</div>
           <div className="modal-action"></div>
         </div>

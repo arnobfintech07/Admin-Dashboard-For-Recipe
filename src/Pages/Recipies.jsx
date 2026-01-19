@@ -52,9 +52,11 @@ const Recipies = () => {
               <RecipeModal />
             </ModalWrapper>
 
-            <ModalWrapper2>
+            <div>
+              <ModalWrapper2>
               <Modal/>
             </ModalWrapper2>
+            </div>
           </div>
         </div>
       </div>

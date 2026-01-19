@@ -54,14 +54,10 @@ const RecipeModal = () => {
 
   return (
     <>
-      <button onClick={() => document.getElementById("my_modal_3").showModal()}>
-        {" "}
-      </button>
-
-      <div className=" shadow m-4 h-350  ">
+     <div className=" shadow m-4 h-350  ">
         <div className="min-h-0">
-          <div>
-            <h1 className=" text-2xl rounded shadow w-full pl-5 p-3 min-h-0">
+          <div className="sticky top-0 z-50 bg-base-100">
+            <h1 className=" text-2xl rounded shadow w-full pl-5 p-3 min-h-0 border ">
               Add Recipe
             </h1>
           </div>
@@ -135,7 +131,7 @@ const RecipeModal = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 w-105 shadow-sm h-110 pl-5  ">
+        <div className="card bg-base-100 h-120 w-100 shadow-sm m-5    ">
           <h2 className="bg-base-200 pl-5 p-3 rounded ">Recipe Directions</h2>
           <div>
             <h1 className="p-4">Prep. Time(min)</h1>
