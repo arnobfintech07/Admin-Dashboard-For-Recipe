@@ -1,4 +1,8 @@
 import { PiCookingPotFill } from "react-icons/pi";
+import { GiCook } from "react-icons/gi";
+import { MdOutlineCategory } from "react-icons/md";
+import { IoSettingsSharp } from "react-icons/io5";
+import { MdReviews } from "react-icons/md";
 import Table from "./Table";
 
 const Card2 = ({cardValue}) => {
@@ -11,7 +15,7 @@ const Card2 = ({cardValue}) => {
           <span className="text-xl lg:2xl font-bold">Total Receipes</span>
           <span className="p-2">
        <div>
-         <PiCookingPotFill />
+         <GiCook />
        </div>
           </span>
           
@@ -25,7 +29,7 @@ const Card2 = ({cardValue}) => {
           <span className="text-xl lg:2xl font-bold">Total Categories</span>
           <span className="p-2">
        <div>
-         <PiCookingPotFill />
+       <MdOutlineCategory />
        </div>
           </span>
         </div>
@@ -38,7 +42,7 @@ const Card2 = ({cardValue}) => {
           <span className="text-xl lg:2xl font-bold">Total Reviews</span>
           <span className="p-2">
        <div>
-         <PiCookingPotFill />
+     <MdReviews />
        </div>
           </span>
         </div>

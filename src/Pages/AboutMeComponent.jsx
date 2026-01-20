@@ -87,9 +87,8 @@ const [responseMessage, setResponseMessage] = useState("");
                 </button>
               </div>
             ) : (
-              <p style={{ color: "red" }}>
-                Loading data from server... If this persists, check your API
-                connection.
+              <p >
+            
               </p>
             )}
              {responseMessage && (

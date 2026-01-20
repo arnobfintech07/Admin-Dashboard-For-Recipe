@@ -2,32 +2,33 @@ import React from "react";
 
 const Test2 = ({data2}) => {
   return (
-    <div className=" border lg:w-400">
+    <div className="  lg: w-400 pl-4">
       <table className="table">
         <thead>
-          <th>category_name</th>
-          <th>category_image</th>
-          <th>category_description</th>
+          <th>Category Name</th>
+          <th>Category Image</th>
+          <th>Category Description</th>
           <th>Action</th>
         </thead>
         <tbody className="">
           {data2.map((value, index) => (
             <tr className="" key={index}>
-              <td>{value.category_name}</td>
-
               <td className="">
                 <img
                   src={value.category_image}
                   alt={value.category_image}
-                  className="w-30"
+                  className="w-30 h-30"
                 />
               </td>
+              <td>{value.category_name}</td>
+
+              
               <td className="">
                 <p className="text-ellipsis line-clamp-1 w-45">
                   {value.category_description}
                 </p>
               </td>
-              <td className="flex gap-3">
+              <td className="flex gap-3 mt-20">
                 <button
                   className="btn btn-warning"
                   onClick={() =>

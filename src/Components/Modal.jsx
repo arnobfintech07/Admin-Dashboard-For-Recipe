@@ -4,7 +4,7 @@ const Modal = () => {
   return (
     <>
       <div>
-        <div className="modal-title sticky  top-0 z-100  bg-base-300 text-2xl font-bold">
+        <div className="modal-title sticky  top-0 z-100   text-2xl font-bold">
         <h2 className=" w-115 h-20 ">Edit Recipe</h2>
       </div>
       <div>

@@ -56,8 +56,8 @@ const RecipeModal = () => {
     <>
      <div className=" shadow m-4 h-350  ">
         <div className="min-h-0">
-          <div className="sticky top-0 z-50 bg-base-100">
-            <h1 className=" text-2xl rounded shadow w-full pl-5 p-3 min-h-0 border ">
+          <div className="sticky top-0 z-50 rounded-xl bg-base-100">
+            <h1 className=" text-2xl  shadow w-full pl-5 p-3 min-h-0  ">
               Add Recipe
             </h1>
           </div>
@@ -199,7 +199,7 @@ const RecipeModal = () => {
         </div>
         <div className="pl-75">
           <button
-            className="btn w-30 bg-blue-900 text-white mt-5
+            className="btn w-30 btn-primary  mt-5
          "
             onClick={AddData}
           >
@@ -207,7 +207,7 @@ const RecipeModal = () => {
           </button>
         </div>
         {responseMessage && (
-          <div className="alert alert-info mx-5">{responseMessage}</div>
+          <div className="alert alert-info mt-7">{responseMessage}</div>
         )}
       </div>
     </>

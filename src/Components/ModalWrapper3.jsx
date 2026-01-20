@@ -50,52 +50,52 @@ const ModalWrapper3 = () => {
 
   return (
     <>
-      <dialog id="my_modal_2" className="modal">
-        <div className="modal-box">
-          <div className=" h-20 shadow ">
-            <h1>Edit Category</h1>
+      <dialog id="my_modal_2" className="modal  ">
+        <div className="modal-box  h-150  ">
+          <div className=" h-10 shadow ">
+            <h3>Edit Category</h3>
           </div>
           <div className="mt-6">
-            <h2 className="mb-5">Category Name</h2>
+            <h2 className="mb-5 text-xl">Category Name</h2>
             <input
               name="category_name"
               value={formData.category_name}
               onChange={handleInputChange}
               type="text"
-              className="border"
+              className="border w-99 rounded pl-5 text-xl "
               placeholder="eg: Veg-Food"
             />
           </div>
 
           <div className="mt-6">
-            <h1 className="p-4">Category Image</h1>
+            <h1 className="text-xl">Category Image</h1>
           </div>
-          <div className="pl-4 ">
+          <div className="mt-4">
             <input
               type="file"
               onChange={handleFileChange}
-              className=" file-input w-90"
+              className=" file-input w-100"
             />
           </div>
           <div className="mt-6">
-            <h2 className="mb-5">Category Description</h2>
-            <div className="pl-4 ">
+            <h2 className="text-xl">Category Description</h2>
+            <div className="mt-4">
               <textarea
                 name="category_description"
                 value={formData.category_description}
                 onChange={handleInputChange}
                 type="text"
                 placeholder="Give Description"
-                className="pl-3 file-input w-90"
+                className="pl-3 file-input w-100"
               />
             </div>
           </div>
-          <div className="mt-2  justify-between flex">
-            <button className="btn" onClick={AddData}>Save</button>
-            <button className="btn">Delete</button>
+          <div className="mt-9 justify-between flex">
+            <button className="btn w-30 btn-primary" onClick={AddData}>Save</button>
+          
           </div>
           {responseMessage && (
-          <div className="alert alert-info mx-5">{responseMessage}</div>
+          <div className="alert alert-info mt-7">{responseMessage}</div>
         )}
         </div>
         <form method="dialog" className="modal-backdrop">

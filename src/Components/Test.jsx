@@ -57,13 +57,13 @@ const Test = ({ data }) => {
               <td>{value.cook_time}</td>
               <td className="flex gap-3">
                 <button
-                  className="btn btn-warning mt-12"
+                  className="btn btn-warning mt-20"
                   onClick={() =>
                     document.getElementById("my_modal_3").showModal()
                   }
                 >Edit</button>
 
-                <button className="btn btn-error mt-12">Delete</button>
+                <button className="btn btn-error mt-20">Delete</button>
               </td>
             </tr>
           ))}

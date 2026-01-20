@@ -1,68 +1,99 @@
+import { IoMdAddCircleOutline } from "react-icons/io";
 import Navbar from "../Components/Navbar";
 import SideBar from "../Components/SideBar";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Settings = () => {
+  const data = [
+    { id: 1, site_key: "Site name", value: "Chef's" },
+    { id: 2, site_key: "logo", value: "/logo.jpg" },
+  ];
+
+  const [newInput, setNewInput] = useState({
+    site_value: "",
+    site_key: "",
+  });
+
+  const handleCreate = (e) => {
+    e.preventDefault();
+    console.log(newInput);
+  };
+
+  const handleChangeInput = (e) => {
+    setNewInput((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
-    <>
-      <div>
-        <div className="sticky top-0 left-0 z-50">
-          <Navbar />
-          <div className="flex justify-center bg-red-100"></div>
-        </div>
-        <div className="flex flex-row">
-          <SideBar />
-          <div className="">
-            <div className="m-5  text-3xl  flex-1 h-15 ">
-              <h2 className=" mt-1 pl-4">Settings</h2>
-              <fieldset className="fieldset rounded-box w-150 shadow-xl p-4 mt-20">
-                <div className="text-2xl shadow rounded pl-4 h-10">
-                  Login Settings
-                </div>
+    <div className="flex flex-col">
+      <Navbar />
+      <div className="flex flex-row gap-5">
+        <SideBar />
 
-                <label className="label mt-4 font-bold text-xl">
-                  New Login
-                </label>
+        {/* container section */}
+        <div className="w-full flex flex-col gap-20">
+          {/* title and create section */}
+          <div className="w-full bg-blue-100 rounded-xl flex flex-row justify-between p-3">
+            <h1 className="text-3xl font-bold text-base-100">Site Settings</h1>
+            <div className="form">
+              <form className="flex flex-col lg:flex-row gap-3" onSubmit={handleCreate}>
                 <input
-                  type="email"
-                  className="input w-full"
-                  placeholder="New Username"
+                  className="input"
+                  type="text"
+                  name="site_key"
+                  value={newInput.site_key}
+                  onChange={handleChangeInput}
+                  placeholder="value"
+                />
+                <input
+                  className="input"
+                  type="text"
+                  name="site_value"
+                  value={newInput.site_value}
+                  onChange={handleChangeInput}
+                  placeholder="site key"
                 />
 
-                <label className="label text-xl font-bold mt-5">
-                  New Password
-                </label>
-                <input
-                  type="password"
-                  className="input w-full"
-                  placeholder="New Password"
-                />
-
-                <label className="label text-xl font-bold mt-5">
-                  Confirm Password
-                </label>
-                <input
-                  type="password"
-                  className="input w-full"
-                  placeholder="Confirm Password"
-                />
-                <label className="label text-xl font-bold mt-5">
-                  Current Password
-                </label>
-                <input
-                  type="password"
-                  className="input w-full"
-                  placeholder="Password"
-                />
-
-                <button className="btn rounded-2xl bg-amber-200  mt-4">
-                  Update
-                </button>
-              </fieldset>
+                <span className="btn btn-primary flex flex-row">
+                  <input type="submit" value={"Add Fields"} />
+                  <IoMdAddCircleOutline className="text-xl" />
+                </span>
+              </form>
             </div>
+          </div>
+
+          {/* table view section */}
+          <div className="overflow-x-auto">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>SL</th>
+                  <th>Site key</th>
+                  <th>Value</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.map((value, index) => (
+                  <tr key={index}>
+                    <td>{value.id}</td>
+                    <td>{value.site_key}</td>
+                    <td>{value.value}</td>
+                    <td className="flex flex-col lg:flex-row gap-2">
+                      <button className="btn btn-warning">Edit</button>
+                      <button className="btn btn-error">Delete</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
