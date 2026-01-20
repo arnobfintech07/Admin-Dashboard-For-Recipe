@@ -43,7 +43,7 @@ const Recipies = () => {
             >
               New Recipe
             </button>
-            <div className="flex flex-col lg:flex-row lg:flex-wrap gap-10 my-5  pr-20">
+            <div className="flex flex-col lg:flex-row lg:flex-wrap  gap-10 my-5  pr-20">
              
               <Test data={recipes}/>
             </div>

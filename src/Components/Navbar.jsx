@@ -8,13 +8,7 @@ function Navbar() {
       </div>
       <div className="flex mt-6 gap-5">
        
-        <div className="  rounded-2xl bg-base-300 ">
-          <input
-            type="text"
-            placeholder="Search"
-            className="input input-bordered w-24 md:w-auto"
-          />
-        </div>
+        
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ const Test = ({ data }) => {
     //   },
     // ];
   return (
-    <div className=" border">
+    <div className=" w-full ">
       <table className="table">
         <thead>
           <th>Image</th>
@@ -42,7 +42,7 @@ const Test = ({ data }) => {
                 <img
                   src={value.recipe_image}
                   alt={value.recipe_image}
-                  className="w-30"
+                  className="w-30 h-30"
                 />
                 {value.image}
               </td>
@@ -57,13 +57,13 @@ const Test = ({ data }) => {
               <td>{value.cook_time}</td>
               <td className="flex gap-3">
                 <button
-                  className="btn btn-warning"
+                  className="btn btn-warning mt-12"
                   onClick={() =>
                     document.getElementById("my_modal_3").showModal()
                   }
                 >Edit</button>
 
-                <button className="btn btn-error">Delete</button>
+                <button className="btn btn-error mt-12">Delete</button>
               </td>
             </tr>
           ))}
