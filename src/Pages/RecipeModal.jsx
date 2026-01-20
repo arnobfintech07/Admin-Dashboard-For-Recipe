@@ -54,15 +54,13 @@ const RecipeModal = () => {
 
   return (
     <>
-     <div className=" shadow m-4 h-350  ">
+     <div  >
         <div className="min-h-0">
-          <div className="sticky top-0 z-50 rounded-xl bg-base-100">
-            <h1 className=" text-2xl  shadow w-full pl-5 p-3 min-h-0  ">
-              Add Recipe
-            </h1>
-          </div>
+           <div className="modal-title  sticky -top-6  z-100 text-2xl font-bold bg-base-100 -m-6">
+          <h2 className="pl-11 py-5">Add Recipe</h2>
+        </div>
           <div>
-            <p className="pl-5 mt-6 font-bold pb-3 mb-3">Recipe Name</p>
+            <p className="pl-5 mt-10 font-bold pb-3 mb-3">Recipe Name</p>
           </div>
 
           <div>

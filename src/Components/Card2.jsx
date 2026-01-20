@@ -10,7 +10,7 @@ const Card2 = ({cardValue}) => {
 
   return (
     <>
-      <div className="bg-base-300 w-50 lg:w-120 rounded-3xl p-6 flex flex-col gap-4">
+      <div className="bg-base-300 h-50 w-50 lg:w-120 rounded-3xl p-6 flex flex-col gap-4">
         <div className="flex flex-row ">
           <span className="text-xl lg:2xl font-bold">Total Receipes</span>
           <span className="p-2">

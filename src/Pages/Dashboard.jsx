@@ -47,7 +47,6 @@ function Dashboard() {
       count: 46546,
     },
   ];
-  
 
   const url = "https://hello.com";
 
@@ -76,15 +75,14 @@ function Dashboard() {
                 
                 
               ))} */}
-              <Card2/>
-              
+              <Card2 />
             </div>
 
             {/* table */}
-            <div className="w-full flex flex-row lg:flex-row  gap-4 lg:gap-10 ">
+            <div className="w-full flex flex-row lg:flex-row pl-5 gap-4 lg:gap-10 ">
               {/* table 1 */}
               <div className="col-span-1 w-50 lg:w-120">
-                <h1>  All Recipies</h1>
+                <h1> All Recipies</h1>
                 <Table entry={entryData} />
               </div>
               <div className="col-span-1 w-60 lg:w-120">
@@ -97,11 +95,9 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          </div>
+        </div>
 
-          {/* content / dashboard viewport */}
-         
-       
+        {/* content / dashboard viewport */}
       </div>
     </>
   );
