@@ -24,6 +24,23 @@ const Recipies = () => {
     getRecipes();
   }, []);
 
+
+  const deleteRecipe = async (recipeId) => {
+    if (window.confirm("Are you sure you want to delete this recipe?")) {
+      try {
+        // According to your URL structure: http://192.168.0.249:8000/api/recipes/{id}/delete
+        await axios.delete(`${baseURL}api/recipes/${recipeId}/delete`);
+        
+        // Update state to remove the deleted recipe from UI
+        setRecipes(recipes.filter((recipe) => recipe.id !== recipeId));
+        alert("Recipe deleted successfully");
+      } catch (error) {
+        console.error("Error deleting recipe:", error);
+        alert("Failed to delete recipe");
+      }
+    }
+  };
+
   const CloneRecipe = () => {};
 
   return (
@@ -44,7 +61,7 @@ const Recipies = () => {
               New Recipe
             </button>
             <div className="flex flex-col lg:flex-row lg:flex-wrap  gap-10 my-5  pr-20">
-              <Test data={recipes} setId={setId}/>
+              <Test data={recipes} setId={setId} deleteRecipe={deleteRecipe}/>
             </div>
             {/* {showModal && <RecipeModal />} */}
             <ModalWrapper>

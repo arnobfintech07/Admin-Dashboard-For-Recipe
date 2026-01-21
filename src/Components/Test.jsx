@@ -1,6 +1,6 @@
 import React from "react";
 import { baseURL } from "../utils/ configs";
-const Test = ({ data, setId }) => {
+const Test = ({ data, setId, deleteRecipe }) => {
   console.log(data);
   // const data = [
   //   {
@@ -66,8 +66,12 @@ const Test = ({ data, setId }) => {
                 >
                   Edit
                 </button>
-
-                <button className="btn btn-error mt-20">Delete</button>
+                <button
+                  className="btn btn-error mt-5"
+                  onClick={() => deleteRecipe(value.id)} // Trigger delete logic
+                >
+                  Delete
+                </button>{" "}
               </td>
             </tr>
           ))}
