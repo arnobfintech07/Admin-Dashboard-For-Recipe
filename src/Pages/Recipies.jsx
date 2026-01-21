@@ -11,7 +11,7 @@ import Modal from "../Components/Modal";
 import Test from "../Components/Test";
 const Recipies = () => {
   const [recipes, setRecipes] = useState([]);
-
+  const [id, setId] = useState(0);
   useEffect(() => {
     const getRecipes = async () => {
       try {
@@ -44,8 +44,7 @@ const Recipies = () => {
               New Recipe
             </button>
             <div className="flex flex-col lg:flex-row lg:flex-wrap  gap-10 my-5  pr-20">
-             
-              <Test data={recipes}/>
+              <Test data={recipes} setId={setId}/>
             </div>
             {/* {showModal && <RecipeModal />} */}
             <ModalWrapper>
@@ -54,8 +53,8 @@ const Recipies = () => {
 
             <div>
               <ModalWrapper2>
-              <Modal/>
-            </ModalWrapper2>
+                <Modal id={id} />
+              </ModalWrapper2>
             </div>
           </div>
         </div>

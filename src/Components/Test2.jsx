@@ -5,8 +5,8 @@ const Test2 = ({data2}) => {
     <div className="  lg: w-400 pl-4">
       <table className="table">
         <thead>
-          <th>Category Name</th>
           <th>Category Image</th>
+          <th>Category Name</th>
           <th>Category Description</th>
           <th>Action</th>
         </thead>
