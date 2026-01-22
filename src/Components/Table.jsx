@@ -9,10 +9,10 @@ const Table = ({entry}) => {
     {/* // daisy ui normal table */}
 
     <div className="w-full overflow-x-auto">
-      <table className="table">
-        <thead>
+      <table className="table ">
+        <thead className="">
           <th>ID</th>
-          <th>Name</th>
+          <th>Recipe Name</th>
           <th>Image</th>
           <th>Review Count</th>
         </thead>

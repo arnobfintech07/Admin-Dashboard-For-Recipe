@@ -28,6 +28,20 @@ function Dashboard() {
       action: "button",
       count: 46546,
     },
+    {
+      id: "1",
+      image: "/images/food01.jpg",
+      category: "fruit",
+      action: "button",
+      count: 521,
+    },
+    {
+      id: "1",
+      image: "/images/food01.jpg",
+      category: "fruit",
+      action: "button",
+      count: 521,
+    },
   ];
 
   const entryData2 = [
@@ -46,6 +60,21 @@ function Dashboard() {
       action: "button",
       count: 46546,
     },
+     {
+      id: "1",
+      image: "/images/food01.jpg",
+      category: "veg",
+      action: "button",
+      count: 521,
+    },
+    {
+      id: "1",
+      image: "/images/food01.jpg",
+      category: "veg",
+      action: "button",
+      count: 521,
+    },
+
   ];
 
   const url = "https://hello.com";
@@ -79,18 +108,18 @@ function Dashboard() {
             </div>
 
             {/* table */}
-            <div className="w-full flex flex-row lg:flex-row pl- gap-4 lg:gap-10 ">
+            <div className="w-full flex flex-row lg:flex-row pl- gap-4 lg:gap-10 mt-10 ">
               {/* table 1 */}
               <div className="col-span-1 w-50 lg:w-120">
-                <h1> All Recipes</h1>
+                <h1 className="text-2xl"> All Recipes</h1>
                 <Table entry={entryData} />
               </div>
               <div className="col-span-1 w-60 lg:w-120">
-                <h1>All Categories</h1>
+                <h1 className="text-2xl">All Categories</h1>
                 <Table entry={entryData2} />
               </div>
               <div className="col-span-1 w-60 lg:w-120">
-                <h1>All Reviews</h1>
+                <h1 className="text-2xl">All Reviews</h1>
                 <Table entry={entryData} />
               </div>
             </div>
