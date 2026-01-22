@@ -2,28 +2,7 @@ import React from "react";
 import { baseURL } from "../utils/ configs";
 const Test = ({ data, setId, deleteRecipe }) => {
   console.log(data);
-  // const data = [
-  //   {
-  //     image:
-  //       "https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg",
-  //     name: "Burger",
-  //     description: "Burger is a ",
-  //     category: "Non-Veg",
-  //     difficulty: "hard",
-  //     cook_time: "33",
-  //     action: "",
-  //   },
-  //   {
-  //     image:
-  //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpPkm3Hhfm2fa7zZFgK0HQrD8yvwSBmnm_Gw&s",
-  //     name: "Pizza",
-  //     description: "Pizza is a",
-  //     category: "Veg",
-  //     difficulty: "Easy",
-  //     cook_time: "20",
-  //     action: "",
-  //   },
-  // ];
+ 
   return (
     <div className=" w-full ">
       <table className="table">

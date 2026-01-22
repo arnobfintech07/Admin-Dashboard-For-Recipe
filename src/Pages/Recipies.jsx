@@ -9,7 +9,11 @@ import ModalWrapper2 from "../Components/ModalWrapper2";
 import { baseURL } from "../utils/ configs";
 import Modal from "../Components/Modal";
 import Test from "../Components/Test";
+
+
 const Recipies = () => {
+
+  
   const [recipes, setRecipes] = useState([]);
   const [id, setId] = useState(0);
   useEffect(() => {

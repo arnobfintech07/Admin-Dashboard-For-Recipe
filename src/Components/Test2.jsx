@@ -1,6 +1,8 @@
 import React from "react";
-
-const Test2 = ({data2}) => {
+import CategoryAddModal from "./CategoryAddModal";
+import CategoryEditModal from "./CategoryEditModal";
+import ModalWrapper4 from "./ModalWrapper4";
+const Test2 = ({ data2, setId, deleteCategory }) => {
   return (
     <div className="  lg: w-400 pl-4">
       <table className="table">
@@ -22,7 +24,6 @@ const Test2 = ({data2}) => {
               </td>
               <td>{value.category_name}</td>
 
-              
               <td className="">
                 <p className="text-ellipsis line-clamp-1 w-45">
                   {value.category_description}
@@ -30,15 +31,20 @@ const Test2 = ({data2}) => {
               </td>
               <td className="flex gap-3 mt-20">
                 <button
-                  className="btn btn-warning"
-                  onClick={() =>
-                    document.getElementById("my_modal_3").showModal()
-                  }
+                  className="btn btn-warning mt-20"
+                  onClick={() => {
+                    setId(value?.id);
+                    document.getElementById("my_modal_6").showModal();
+                  }}
                 >
                   Edit
                 </button>
-
-                <button className="btn btn-error">Delete</button>
+                <button
+                  className="btn btn-error mt-20"
+                  onClick={() => deleteCategory(value.id)}
+                >
+                  Delete
+                </button>{" "}
               </td>
             </tr>
           ))}

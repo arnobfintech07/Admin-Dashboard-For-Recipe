@@ -79,10 +79,10 @@ function Dashboard() {
             </div>
 
             {/* table */}
-            <div className="w-full flex flex-row lg:flex-row pl-5 gap-4 lg:gap-10 ">
+            <div className="w-full flex flex-row lg:flex-row pl- gap-4 lg:gap-10 ">
               {/* table 1 */}
               <div className="col-span-1 w-50 lg:w-120">
-                <h1> All Recipies</h1>
+                <h1> All Recipes</h1>
                 <Table entry={entryData} />
               </div>
               <div className="col-span-1 w-60 lg:w-120">
