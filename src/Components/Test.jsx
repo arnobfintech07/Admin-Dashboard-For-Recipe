@@ -67,8 +67,8 @@ const Test = ({ data, setId, deleteRecipe }) => {
                   Edit
                 </button>
                 <button
-                  className="btn btn-error mt-5"
-                  onClick={() => deleteRecipe(value.id)} // Trigger delete logic
+                  className="btn btn-error mt-20"
+                  onClick={() => deleteRecipe(value.id)} 
                 >
                   Delete
                 </button>{" "}

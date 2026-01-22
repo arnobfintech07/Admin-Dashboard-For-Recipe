@@ -53,7 +53,7 @@ const ModalWrapper3 = () => {
       <dialog id="my_modal_2" className="modal  ">
         <div className="modal-box  h-150  ">
           <div className=" h-10 shadow ">
-            <h3>Edit Category</h3>
+            <h3>Add Category</h3>
           </div>
           <div className="mt-6">
             <h2 className="mb-5 text-xl">Category Name</h2>
