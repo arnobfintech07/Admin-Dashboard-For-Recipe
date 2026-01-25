@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import SideBar from "../Components/SideBar";
-import Card from "../Components/Card";
 import RecipeModal from "./RecipeModal";
 import ModalWrapper from "../Components/ModalWrapper";
 import ModalWrapper2 from "../Components/ModalWrapper2";

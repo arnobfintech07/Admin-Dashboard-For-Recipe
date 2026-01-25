@@ -10,6 +10,7 @@ import About from "./Pages/About";
 import Pie from "./Components/Pie";
 import Test from "./Components/Test";
 import AboutMeComponent from "./Pages/AboutMeComponent"; 
+import Review from "./Pages/Review"
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/aboutme" element={<AboutMeComponent />} />
         <Route path="/pie" element={<Pie />} />
         <Route path="/test" element={<Test />} />
+        <Route path="/review" element={<Review />} />
       </Routes>
     </Router>
   );

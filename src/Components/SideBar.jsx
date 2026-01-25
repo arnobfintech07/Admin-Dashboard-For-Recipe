@@ -34,6 +34,9 @@ function SideBar() {
       <li>
         <Link to="/aboutme"><MdOutlineDescription />About Me</Link>
       </li>
+        <li>
+        <Link to="/review"><MdOutlineDescription />Reviews</Link>
+      </li>
        {/* <li>
         <a><PiSignOutBold />Sign Out</a>
       </li> */}

@@ -54,30 +54,31 @@ const RecipeModal = () => {
 
   return (
     <>
-     <div  >
-        <div className="min-h-0">
-           <div className="modal-title  sticky -top-6  z-100 text-2xl font-bold bg-base-100 -m-6">
-          <h2 className="pl-11 py-5">Add Recipe</h2>
+     <div>
+        <div className="min-h-0 ">
+           <div className="modal-title  sticky -top-6  z-100 text-2xl font-bold bg-base-300 -m-6">
+          <h2 className="pl-10 py-5">Add Recipe</h2>
         </div>
           <div>
-            <p className="pl-5 mt-10 font-bold pb-3 mb-3">Recipe Name</p>
+            <p className="pl-6 mt-10 font-bold pb-3 mb-3">Recipe Name</p>
           </div>
 
           <div>
-            <div className="pl-5">
+            <div className="pl-6 ">
               <input
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
                 type="text"
                 placeholder="eg: Chicken Soup"
-                className="input w-100 "
+                className="input w-full h-20 "
               />
             </div>
           </div>
 
-          <div className="card bg-base-100 h-120 w-100 shadow-sm m-5   ">
-            <h2 className="bg-base-200 pl-5 p-3 rounded">Media</h2>
+          <div className="">
+            <div className="card bg-base-100 h-120 w-full shadow-sm m-5 ">
+            <h2 className="bg-base-200  p-3 rounded">Media</h2>
             <div>
               <h1 className="p-4">Recipe Images</h1>
             </div>
@@ -85,7 +86,7 @@ const RecipeModal = () => {
               <input
                 type="file"
                 onChange={handleFileChange}
-                className=" file-input w-90"
+                className=" file-input w-full"
               />
             </div>
             <div className="">
@@ -98,7 +99,7 @@ const RecipeModal = () => {
                 onChange={handleInputChange}
                 type="text"
                 placeholder="Give Description"
-                className="pl-3 file-input w-90"
+                className="pl-3 file-input w-full"
               />
             </div>
             <div className="">
@@ -111,7 +112,7 @@ const RecipeModal = () => {
                 onChange={handleInputChange}
                 type="text"
                 placeholder="Give Ingredients"
-                className="pl-3 file-input w-90"
+                className="pl-3 file-input w-full"
               />
             </div>
             <div className="">
@@ -124,12 +125,12 @@ const RecipeModal = () => {
                 onChange={handleInputChange}
                 type="text"
                 placeholder="Give Steps to cook"
-                className="pl-3 file-input w-90"
+                className="pl-3 file-input w-full"
               />
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 h-120 w-100 shadow-sm m-5    ">
+        <div className="card bg-base-100 h-120 w-full shadow-sm m-5    ">
           <h2 className="bg-base-200 pl-5 p-3 rounded ">Recipe Directions</h2>
           <div>
             <h1 className="p-4">Prep. Time(min)</h1>
@@ -141,7 +142,7 @@ const RecipeModal = () => {
               onChange={handleInputChange}
               type="text"
               placeholder="eg: give time in min"
-              className="input w-90 "
+              className="input w-full "
             />
           </div>
           <div className="">
@@ -154,7 +155,7 @@ const RecipeModal = () => {
                 onChange={handleInputChange}
                 type="text"
                 placeholder="eg: give time in min"
-                className="input w-90 "
+                className="input w-full "
               />
             </div>
           </div>
@@ -169,7 +170,7 @@ const RecipeModal = () => {
                 value={formData.difficulty}
                 onChange={handleInputChange}
                 defaultValue="Pick Difficulty"
-                className="select"
+                className="select w-full"
               >
                 <option disabled={true}>Pick Difficulty</option>
                 <option value={"easy"}>Easy</option>
@@ -191,13 +192,14 @@ const RecipeModal = () => {
                 onChange={handleInputChange}
                 type="text"
                 placeholder="Select Category"
-                className="input w-90 "
+                className="input w-full "
               />
           </div>
         </div>
-        <div className="pl-75">
+          </div>
+        <div className="pl-260">
           <button
-            className="btn w-30 btn-primary  mt-5
+            className="btn w-50  btn-primary  
          "
             onClick={AddData}
           >
@@ -205,7 +207,7 @@ const RecipeModal = () => {
           </button>
         </div>
         {responseMessage && (
-          <div className="alert alert-info mt-7">{responseMessage}</div>
+          <div className="alert alert-info mt-1 w-50 ">{responseMessage}</div>
         )}
       </div>
     </>

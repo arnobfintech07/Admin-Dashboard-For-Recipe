@@ -89,23 +89,29 @@ const Modal = ({ id }) => {
 
   return (
     <div>
-      <div className="modal-title sticky -top-6 z-100 text-2xl font-bold bg-base-100 -mt-6">
-        <h2 className="py-5">Edit Recipe</h2>
-      </div>
+    {/* Edit Recipe Header */}
+{/* Edit Recipe Header */}
+<div className="sticky top-0 -mx-6 -mt-6 z-20 bg-white dark:bg-base-300 border-b border-base-200">
+  <div className="px-6 py-5">
+    <h2 className="text-2xl font-bold">Edit Recipe</h2>
+  </div>
+</div>
+
+
       <div>
         <div className="pl-1 text-xl font-bold">Recipe Name</div>
-        <div className="h-10 w-full rounded-xl mt-4">
+        <div className="h-10 w-full  rounded-xl mt-4">
           <input
             name="name"
             type="text"
-            className="input border w-full"
+            className="input border w-full h-20"
             value={recipes.name || ""}
             onChange={handleChange}
           />
         </div>
 
         <div className="pl-4">
-          <div className="card bg-base-100 w-100 shadow-sm mt-20">
+          <div className="card bg-base-100 w-full shadow-sm mt-20">
             <div className="mt-5 pl-5 font-bold">
               <h2 className="text-xl">Recipe Image</h2>
             </div>
@@ -128,7 +134,7 @@ const Modal = ({ id }) => {
         </div>
 
         <div className="pl-4">
-          <div className="card bg-base-100 w-100 shadow-sm mt-10 p-5">
+          <div className="card bg-base-100 w-full shadow-sm mt-10 p-5">
             <div className="font-bold">
               <h2>Recipe Directions</h2>
             </div>
@@ -139,7 +145,7 @@ const Modal = ({ id }) => {
             <input
               name="cook_time"
               type="number"
-              className="input border rounded"
+              className="input border rounded w-full"
               value={recipes.cook_time || ""}
               onChange={handleChange}
             />
@@ -149,7 +155,7 @@ const Modal = ({ id }) => {
             </div>
             <select
               name="difficulty"
-              className="select border rounded"
+              className="select border rounded w-full"
               value={recipes.difficulty || "Easy"}
               onChange={handleChange}
             >
