@@ -58,10 +58,10 @@ const Recipies = () => {
           <div className="m-5 flex-1  h-4">
             <h1 className=" text-3xl rounded shadow">Recipes</h1>
             <button
-              className="btn mt-9"
+              className="btn mt-9 h-18 w-44 text-2xl rounded-2xl"
               onClick={() => document.getElementById("my_modal_4").showModal()}
             >
-              New Recipe
+              Add Recipe
             </button>
             <div className="flex flex-col lg:flex-row lg:flex-wrap  gap-10 my-5  pr-20">
               <Test data={recipes} setId={setId} deleteRecipe={deleteRecipe}/>

@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Table2 = ({ entry }) => {
+const Table2 = ({ entry, onSave }) => {
+  // Local state to track which row is being edited before submission
+  const [tempStatus, setTempStatus] = useState({});
+
+  const handleStatusChange = (id, value) => {
+    setTempStatus((prev) => ({ ...prev, [id]: value }));
+  };
+
   return (
     <div className="w-full overflow-x-auto">
-      <table className="table w-full ">
+      <table className="table border w-full">
         <thead>
-          <tr className="text-left">
+          <tr>
             <th>User ID</th>
             <th>User Name</th>
             <th>Email</th>
@@ -13,30 +20,51 @@ const Table2 = ({ entry }) => {
             <th>Message</th>
             <th>Status</th>
             <th>Reaction</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          {entry && entry.length > 0 ? (
-            entry.map((value) => (
-              <tr key={value.id} className="border-t">
+          {entry && entry.map((value) => {
+            // Priority: use the locally selected status, otherwise fallback to database status
+            const currentStatus = tempStatus[value.id] || value.status;
+
+            return (
+              <tr key={value.id}>
                 <td>{value.user_info_id}</td>
                 <td>{value.user_name}</td>
                 <td>{value.email}</td>
                 <td>{value.recipe_id}</td>
                 <td>{value.message}</td>
                 <td>
-                  <span className={`badge ${value.status === 'pending' ? 'bg-red-700' : 'bg-green-200'}`}>
-                    {value.status}
-                  </span>
+                  <select 
+                    className="select select-bordered select-xs"
+                    value={currentStatus}
+                    onChange={(e) => handleStatusChange(value.id, e.target.value)}
+                  >
+                    <option value="pending">pending</option>
+                    <option value="accepted">accepted</option> 
+                    <option value="rejected">rejected</option>
+                  </select>
                 </td>
                 <td>{value.reaction}</td>
+                <td>
+                  <button 
+                    className="btn btn-success btn-xs"
+                    onClick={() => {
+                      // REQUIRED: Must send all three fields to prevent 500 Error
+                      onSave(value.id, {
+                        message: value.message,
+                        status: currentStatus,
+                        reaction: value.reaction
+                      });
+                    }}
+                  >
+                    Submit
+                  </button>
+                </td>
               </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="7" className="text-center py-4">No reviews found.</td>
-            </tr>
-          )}
+            );
+          })}
         </tbody>
       </table>
     </div>
