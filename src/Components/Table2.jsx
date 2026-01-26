@@ -10,7 +10,7 @@ const Table2 = ({ entry, onSave }) => {
 
   return (
     <div className="w-full overflow-x-auto">
-      <table className="table border w-full">
+      <table className="table  w-full">
         <thead>
           <tr>
             <th>User ID</th>
@@ -37,7 +37,7 @@ const Table2 = ({ entry, onSave }) => {
                 <td>{value.message}</td>
                 <td>
                   <select 
-                    className="select select-bordered select-xs"
+                    className="select select-bordered select-xs w-23"
                     value={currentStatus}
                     onChange={(e) => handleStatusChange(value.id, e.target.value)}
                   >

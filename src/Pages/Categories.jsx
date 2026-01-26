@@ -51,7 +51,7 @@ const Categories = () => {
                 <h2>Categories</h2>
               </div>
               <button
-                className="btn mt-6 mb-9"
+                className="btn mt-6 mb-9 text-2xl h-18 rounded-2xl"
                 onClick={() =>
                   document.getElementById("my_modal_2").showModal()
                 }
